@@ -1242,14 +1242,242 @@ header {
 }
 
 /* Mobile fixes for logo and reviews */
+/* =========================
+   PROFESSIONAL CIRCLE LOGO FIX
+   ========================= */
+
+.logo-brand {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 12px;
+  min-width: auto;
+}
+
+.logo-circle {
+  width: 58px;
+  height: 58px;
+  min-width: 58px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(182, 255, 61, 0.75);
+  box-shadow:
+    0 0 0 6px rgba(142, 224, 0, 0.07),
+    0 12px 32px rgba(142, 224, 0, 0.22);
+}
+
+.logo-circle img {
+  width: 112%;
+  height: 112%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.18);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.brand-text strong {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 1000;
+  letter-spacing: -0.4px;
+}
+
+.brand-text small {
+  color: var(--green-2);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+
+.footer-logo-brand {
+  align-items: center;
+}
+
+.footer-logo-circle {
+  width: 82px;
+  height: 82px;
+  min-width: 82px;
+}
+
+.footer-logo-brand .brand-text strong {
+  font-size: 24px;
+}
+
+.footer-logo-brand .brand-text small {
+  font-size: 13px;
+}
+
+/* Hide old image logo styles if present */
+.site-logo,
+.footer-logo {
+  width: auto !important;
+  height: auto !important;
+  max-width: none !important;
+}
+
+/* Header spacing fix */
+.nav {
+  min-height: 82px;
+  height: 82px;
+}
+
+header {
+  overflow: visible;
+}
+
+/* =========================
+   TRUST + REVIEWS SECTION
+   ========================= */
+
+.trust-strip {
+  padding: 34px 0 20px;
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.trust-item {
+  padding: 22px;
+  border-radius: 22px;
+  text-align: center;
+  background: rgba(255,255,255,.055);
+  border: 1px solid rgba(142, 224, 0, .14);
+}
+
+.trust-item strong {
+  display: block;
+  color: var(--green-2);
+  font-size: 32px;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.trust-item span {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.reviews-section {
+  background:
+    radial-gradient(circle at 20% 15%, rgba(142, 224, 0, .09), transparent 30%),
+    linear-gradient(180deg, transparent, rgba(142, 224, 0, .035), transparent);
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.review-card {
+  padding: 28px;
+  border-radius: 26px;
+  background: linear-gradient(145deg, rgba(255,255,255,.09), rgba(255,255,255,.035));
+  border: 1px solid rgba(142, 224, 0, .16);
+  transition: .25s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(182, 255, 61, .45);
+  box-shadow: 0 22px 55px rgba(142, 224, 0, .10);
+}
+
+.review-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
+  background: var(--green);
+  color: #061006;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  font-weight: 1000;
+}
+
+.review-top h3 {
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.review-top span {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.stars {
+  color: var(--green-2);
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+  font-size: 15px;
+}
+
+.review-card p {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.client-logos {
+  margin-top: 28px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.client-logos span {
+  padding: 11px 15px;
+  border-radius: 999px;
+  color: #dcdcdc;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.10);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+/* Mobile logo and reviews fix */
 @media (max-width: 960px) {
   .trust-grid,
   .reviews-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .site-logo {
-    width: 135px;
+  .logo-circle {
+    width: 54px;
+    height: 54px;
+    min-width: 54px;
+  }
+
+  .brand-text strong {
+    font-size: 16px;
+  }
+
+  .brand-text small {
+    font-size: 10px;
+    letter-spacing: 3px;
   }
 }
 
@@ -1259,8 +1487,34 @@ header {
     grid-template-columns: 1fr;
   }
 
-  .site-logo {
-    width: 120px;
+  .nav {
+    min-height: 76px;
+    height: 76px;
+  }
+
+  .logo-circle {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+  }
+
+  .brand-text strong {
+    font-size: 15px;
+  }
+
+  .brand-text small {
+    font-size: 9px;
+    letter-spacing: 2.6px;
+  }
+
+  .footer-logo-circle {
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+  }
+
+  .footer-logo-brand .brand-text strong {
+    font-size: 20px;
   }
 
   .review-card:hover {
