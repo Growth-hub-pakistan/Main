@@ -945,3 +945,12 @@ footer {
     height: 170px;
   }
 }
+.center-actions {
+  justify-content: center;
+}
+
+.phone-panel p {
+  color: #b7b7b7;
+  font-size: 13px;
+  font-weight: 800;
+}
